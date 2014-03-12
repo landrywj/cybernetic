@@ -28,7 +28,7 @@ class SnippetsController < ApplicationController
 
     respond_to do |format|
       if @snippet.save
-        format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
+        format.html { redirect_to '/snippets', notice: 'Snippet was successfully created.' }
         format.json { render action: 'show', status: :created, location: @snippet }
       else
         format.html { render action: 'new' }

@@ -1,9 +1,10 @@
-<h1>Listing snippets</h1>
+<h1>Snippets Index</h1>
 
 <table>
   <thead>
     <tr>
       <th>Technology</th>
+	  <th>Description</th>
       <th>Code</th>
       <th></th>
       <th></th>
@@ -15,6 +16,7 @@
     <% @snippets.each do |snippet| %>
       <tr>
         <td><%= snippet.technology %></td>
+		<td><%= snippet.description %></td>
         <td><%= snippet.code %></td>
         <td><%= link_to 'Show', snippet %></td>
         <td><%= link_to 'Edit', edit_snippet_path(snippet) %></td>

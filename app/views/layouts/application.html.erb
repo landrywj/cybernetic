@@ -2,13 +2,21 @@
 <html>
 <head>
   <title>Cybernetic</title>
+  <script type="text/javascript" src="//use.typekit.net/rkr2neu.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="content">
+	
+		<%= yield %>
+		
+	</div>
 
-<%= yield %>
+<div id="javascripts">
 
+</div>
 </body>
 </html>
