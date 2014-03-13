@@ -1,3 +1,6 @@
+This Ruby on Rails 4.1 application is designed as a developer tool to hold snippets of code and catalog other information for a programmer. 
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
