@@ -2,13 +2,13 @@
 lock '3.1.0'
 
 set :application, 'cybernetic'
-set :repo_url, 'git@github.com:landrywj/cybernetic.git'
+set :deploy_user, 'deployer'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deployer/apps/cybernetic'
+set :deploy_to, "/home/deployer/apps/#{application}"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -34,27 +34,37 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set(:config_files, %w(
-  nginx.conf
-  unicorn.rb
-  unicorn_init.sh
-))
- 
-set(:executable_config_files, %w(
-  unicorn_init.sh
-))
 
-set(:symlinks, [
-  {
-    source: "nginx.conf",
-    link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
-  },
-  {
-    source: "unicorn_init.sh",
-    link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
-  }
-])
 namespace :deploy do
+
+  task :setup_config do
+    on roles(:app) do
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    run "mkdir -p #{shared_path}/config"
+    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+    puts "Now edit the config files in #{shared_path}."
+    end
+  end
   
 
-end
+  task :symlink_config do
+    on  roles(:app) do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    end
+  end
+
+
+  desc "Make sure local git is in sync with remote."
+  task :check_revision do
+    on roles(:web) do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      puts "WARNING: HEAD is not the same as origin/master"
+      puts "Run `git push` to sync changes."
+      exit
+    end
+    end
+  end
+  before "deploy", "deploy:check_revision"
+
+end  
