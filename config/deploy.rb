@@ -29,7 +29,7 @@ set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
-set :default_env, { path: "/home/deployer/.rvm/rubies/ruby-2.1.1/bin/ruby:$PATH" }
+#set :default_env, { path: "/home/deployer/.rvm/rubies/ruby-2.1.0:$PATH" }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -56,8 +56,5 @@ set(:symlinks, [
 ])
 namespace :deploy do
   
-  before :deploy, "deploy:check_revision"
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
-  after :finishing, 'deploy:cleanup'
 
 end
