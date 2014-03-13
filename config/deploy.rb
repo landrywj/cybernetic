@@ -47,14 +47,13 @@ set(:executable_config_files, %w(
 set(:symlinks, [
   {
     source: "nginx.conf",
-    link: "/etc/nginx/sites-enabled/#{fetch(:cybernetic)}"
-  }
+    link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
+  },
   {
     source: "unicorn_init.sh",
-    link: "/etc/init.d/unicorn_#{fetch(:cybernetic)}"
+    link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
   }
 ])
-
 namespace :deploy do
   
   before :deploy, "deploy:check_revision"
