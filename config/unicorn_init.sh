@@ -1,12 +1,3 @@
-N INIT INFO
-# Provides:          unicorn
-# Required-Start:    $remote_fs $syslog
-# Required-Stop:     $remote_fs $syslog
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Manage unicorn server
-# Description:       Start, stop, restart unicorn server for a specific application.
-### END INIT INFO
 #!/bin/sh
 set -e
 
@@ -15,7 +6,7 @@ TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/home/deployer/apps/cybernetic/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
 CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
-AS_USER=username
+AS_USER=deployer
 set -u
 
 OLD_PIN="$PID.oldbin"
