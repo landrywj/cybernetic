@@ -1,0 +1,14 @@
+set :stage, :production
+
+# Simple Role Syntax
+# ==================
+# Supports bulk-adding hosts to roles, the primary
+# server in each group is considered to be the first
+# unless any hosts have the primary property set.
+# Don't declare `role :all`, it's a meta role
+#role :app, %w{50.240.20.170}
+#role :web, %w{50.240.20.170}
+#role :db,  %w{50.240.20.170}
+
+server('deployer@107.170.248.49, {roles: %w{app web db}, primary: true})
+
