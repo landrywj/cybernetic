@@ -7,6 +7,7 @@ N INIT INFO
 # Short-Description: Manage unicorn server
 # Description:       Start, stop, restart unicorn server for a specific application.
 ### END INIT INFO
+#!/bin/sh
 set -e
 
 # Feel free to change any of the following variables for your app:
