@@ -41,7 +41,7 @@ end
 # Use Capistrano for deployment
 group :development do 
       gem 'capistrano'
-      gem 'rvm-capistrano'
+      gem 'capistrano-rvm'
       gem 'capistrano-rails'
       gem 'capistrano-bundler'
 end
