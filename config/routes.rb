@@ -1,4 +1,5 @@
 Cybernetic::Application.routes.draw do
+  devise_for :users
   resources :snippets
 
   # The priority is based upon order of creation: first created -> highest priority.
