@@ -1,0 +1,97 @@
+<h1>Listing contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Display name</th>
+      <th>Nickame</th>
+      <th>Primary email</th>
+      <th>Secondary email</th>
+      <th>Screen name</th>
+      <th>Work phone</th>
+      <th>Home phone</th>
+      <th>Fax number</th>
+      <th>Mobile number</th>
+      <th>Home address</th>
+      <th>Home address2</th>
+      <th>Home city</th>
+      <th>Home state</th>
+      <th>Home zip code</th>
+      <th>Home country</th>
+      <th>Work address</th>
+      <th>Work address 2</th>
+      <th>Work city</th>
+      <th>Work state</th>
+      <th>Work zip code</th>
+      <th>Work country</th>
+      <th>Job title</th>
+      <th>Department</th>
+      <th>Organization</th>
+      <th>Web page 1</th>
+      <th>Web page 2</th>
+      <th>Birth year</th>
+      <th>Birth month</th>
+      <th>Birth day</th>
+      <th>Custom 1</th>
+      <th>Custom 2</th>
+      <th>Custom 3</th>
+      <th>Custom 4</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.first_name %></td>
+        <td><%= contact.last_name %></td>
+        <td><%= contact.display_name %></td>
+        <td><%= contact.nickame %></td>
+        <td><%= contact.primary_email %></td>
+        <td><%= contact.secondary_email %></td>
+        <td><%= contact.screen_name %></td>
+        <td><%= contact.work_phone %></td>
+        <td><%= contact.home_phone %></td>
+        <td><%= contact.fax_number %></td>
+        <td><%= contact.mobile_number %></td>
+        <td><%= contact.home_address %></td>
+        <td><%= contact.home_address2 %></td>
+        <td><%= contact.home_city %></td>
+        <td><%= contact.home_state %></td>
+        <td><%= contact.home_zip_code %></td>
+        <td><%= contact.home_country %></td>
+        <td><%= contact.work_address %></td>
+        <td><%= contact.work_address_2 %></td>
+        <td><%= contact.work_city %></td>
+        <td><%= contact.work_state %></td>
+        <td><%= contact.work_zip_code %></td>
+        <td><%= contact.work_country %></td>
+        <td><%= contact.job_title %></td>
+        <td><%= contact.department %></td>
+        <td><%= contact.organization %></td>
+        <td><%= contact.web_page_1 %></td>
+        <td><%= contact.web_page_2 %></td>
+        <td><%= contact.birth_year %></td>
+        <td><%= contact.birth_month %></td>
+        <td><%= contact.birth_day %></td>
+        <td><%= contact.custom_1 %></td>
+        <td><%= contact.custom_2 %></td>
+        <td><%= contact.custom_3 %></td>
+        <td><%= contact.custom_4 %></td>
+        <td><%= contact.notes %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

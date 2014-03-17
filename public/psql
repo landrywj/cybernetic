@@ -1,4 +1,4 @@
-<h2>General</h2>
+\d<h2>General</h2>
   \copyright             show PostgreSQL usage and distribution terms
   \g [FILE] or ;         execute query (and send results to file or |pipe)
   \h [NAME]              help on syntax of SQL commands, * for all commands

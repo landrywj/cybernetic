@@ -1,4 +1,6 @@
 Cybernetic::Application.routes.draw do
+  resources :contacts
+
   resources :recipes
 
   devise_for :users
