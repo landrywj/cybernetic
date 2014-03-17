@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312235125) do
+ActiveRecord::Schema.define(version: 20140317160715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "recipes", force: true do |t|
+    t.string   "technology"
+    t.string   "name"
+    t.text     "procedure"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recipes", ["technology"], name: "index_recipes_on_technology", using: :btree
 
   create_table "snippets", force: true do |t|
     t.string   "technology"

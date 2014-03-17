@@ -1,10 +1,10 @@
-General
+<h2>General</h2>
   \copyright             show PostgreSQL usage and distribution terms
   \g [FILE] or ;         execute query (and send results to file or |pipe)
   \h [NAME]              help on syntax of SQL commands, * for all commands
   \q                     quit psql
 
-Query Buffer
+<h2>Query Buffer</h2>
   \e [FILE] [LINE]       edit the query buffer (or file) with external editor
   \ef [FUNCNAME [LINE]]  edit function definition with external editor
   \p                     show the contents of the query buffer
@@ -12,14 +12,14 @@ Query Buffer
   \s [FILE]              display history or save it to file
   \w FILE                write query buffer to file
 
-Input/Output
+<h2>Input/Output</h2>
   \copy ...              perform SQL COPY with data stream to the client host
   \echo [STRING]         write string to standard output
   \i FILE                execute commands from file
   \o [FILE]              send all query results to file or |pipe
   \qecho [STRING]        write string to query output stream (see \o)
 
-Informational
+<h2>Informational</h2>
   (options: S = show system objects, + = additional detail)
   \d[S+]                 list tables, views, and sequences
   \d[S+]  NAME           describe table, view, sequence, or index
@@ -56,7 +56,7 @@ Informational
 :
 
 
-Formatting
+<h2>Formatting</h2>
   \a                     toggle between unaligned and aligned output mode
   \C [STRING]            set table title, or unset if none
   \f [STRING]            show or set field separator for unaligned query output
@@ -68,24 +68,24 @@ Formatting
   \T [STRING]            set HTML <table> tag attributes, or unset if none
   \x [on|off]            toggle expanded output (currently off)
 
-Connection
+<h2>Connection</h2>
   \c[onnect] [DBNAME|- USER|- HOST|- PORT|-]
                          connect to new database (currently "postgres")
   \encoding [ENCODING]   show or set client encoding
   \password [USERNAME]   securely change the password for a user
   \conninfo              display information about current connection
 
-Operating System
+<h2>Operating System</h2>
   \cd [DIR]              change the current working directory
   \timing [on|off]       toggle timing of commands (currently off)
   \! [COMMAND]           execute command in shell or start interactive shell
 
-Variables
+<h2>Variables</h2>
   \prompt [TEXT] NAME    prompt user to set internal variable
   \set [NAME [VALUE]]    set internal variable, or list all if no parameters
   \unset NAME            unset (delete) internal variable
 
-Large Objects
+<h2>Large Objects</h2>
   \lo_export LOBOID FILE
   \lo_import FILE [COMMENT]
   \lo_list
