@@ -3,7 +3,9 @@ Cybernetic::Application.routes.draw do
 
   resources :recipes
 
-  devise_for :users
+  #devise_for :users
+   #temporarily disable registration until site is ready. 
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :snippets
 
   # The priority is based upon order of creation: first created -> highest priority.
