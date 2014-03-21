@@ -1,4 +1,8 @@
 Cybernetic::Application.routes.draw do
+  resources :tasks
+
+  resources :use_cases
+
   resources :devlogs
 
   resources :projects
