@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @devlog.message %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @devlog.project %>
+</p>
+
+<%= link_to 'Edit', edit_devlog_path(@devlog) %> |
+<%= link_to 'Back', devlogs_path %>
