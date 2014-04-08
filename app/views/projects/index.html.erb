@@ -16,6 +16,9 @@
       <tr>
         <td><%= project.name %></td>
         <td><%= project.description %></td>
+        <td><%= link_to 'Tasks', project_tasks_path(project) %></td>
+        <td><%= link_to 'Use Cases', project_use_cases_path(project) %></td>
+        <td><%= link_to 'Devlogs', project_devlogs_path(project) %></td> 
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

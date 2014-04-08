@@ -4,12 +4,9 @@
             <% if user_signed_in? %>
 			Hello <%= link_to(current_user.email, edit_user_registration_path) %> |
 			<%= link_to 'Projects', projects_path %> |
-			<%= link_to 'Tasks', tasks_path %> |
-			<%= link_to 'Use Cases', use_cases_path %> |
 			<%= link_to 'Contacts', contacts_path %> |
 			<%= link_to 'Recipes', recipes_path %> |
 			<%= link_to 'Snippets', snippets_path %> |
-		    <%= link_to 'Devlogs', devlogs_path %> |			
 			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
 			<% else %>
                         <%= render "devise/shared/links" %>

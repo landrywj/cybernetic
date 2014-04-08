@@ -16,9 +16,6 @@
       <tr>
         <td><%= devlog.message %></td>
         <td><%= devlog.project %></td>
-        <td><%= link_to 'Show', devlog %></td>
-        <td><%= link_to 'Edit', edit_devlog_path(devlog) %></td>
-        <td><%= link_to 'Destroy', devlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Devlog', new_devlog_path %>
+<%= link_to 'New Devlog', new_project_devlog_path %>
