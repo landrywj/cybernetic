@@ -3,18 +3,17 @@
 
             <% if user_signed_in? %>
 
-			Hello <%= link_to(current_user.email, edit_user_registration_path) %> |
+	  Hello <%= link_to(current_user.email, edit_user_registration_path) %> |
 			<%= link_to 'Projects', projects_path %> |
 			<%= link_to 'Contacts', contacts_path %> |
 			<%= link_to 'Recipes', recipes_path %> |
 			<%= link_to 'Snippets', snippets_path %> |
-
 	
 			<% else %>
                         <%= render "devise/shared/links" %>
 			<% end %>  
 </div>
 
-	<a href="/"><h1>Cybernetic</h1></a>
+<a href="/"><h1>Cybernetic</h1></a>
 
 
