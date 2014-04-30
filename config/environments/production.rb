@@ -20,7 +20,7 @@ Cybernetic::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -40,10 +40,10 @@ Cybernetic::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
-  config.to_prepare { Devise::SessionsController.force_ssl }
-  config.to_prepare { Devise::RegistrationsController.force_ssl }
-  config.to_prepare { Devise::PasswordsController.force_ssl }
+  config.force_ssl = false
+  # config.to_prepare { Devise::SessionsController.force_ssl }
+  # config.to_prepare { Devise::RegistrationsController.force_ssl }
+  # config.to_prepare { Devise::PasswordsController.force_ssl }
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
