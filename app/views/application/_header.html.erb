@@ -3,7 +3,7 @@
 
             <% if user_signed_in? %>
 
-	  Hello <%= link_to(current_user.email, edit_user_registration_path) %> |
+	  Hello <%= current_user.email %>! |
 			<%= link_to 'Projects', projects_path %> |
 			<%= link_to 'Contacts', contacts_path %> |
 			<%= link_to 'Recipes', recipes_path %> |
