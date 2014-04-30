@@ -1,4 +1,4 @@
-root = "/home/deployer/apps/cybernetic/current"
+root = "/home/atlaswarner/apps/cybernetic/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
