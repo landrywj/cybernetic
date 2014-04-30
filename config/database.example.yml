@@ -1,1 +1,23 @@
-#postgres database config
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_dev
+  pool: 5
+  username: username
+  password: password
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_production
+  pool: 5
+  timeout: 5000
+  username: username
+  password: password
+
