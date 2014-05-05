@@ -3,7 +3,9 @@ class SnippetsController < ApplicationController
 
 
   def index
-    @snippets = Snippet.all.order(:technology DESC)
+    @snippets = Snippet.all.order(technology: :desc)
+  end
+  
   def show
   end
 
