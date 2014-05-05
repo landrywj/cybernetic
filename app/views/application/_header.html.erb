@@ -1,0 +1,19 @@
+
+<div class="pull-right">
+
+            <% if user_signed_in? %>
+
+	  Hello <%= current_user.email %>! |
+			<%= link_to 'Projects', projects_path %> |
+			<%= link_to 'Contacts', contacts_path %> |
+			<%= link_to 'Recipes', recipes_path %> |
+			<%= link_to 'Snippets', snippets_path %> 
+	
+			<% else %>
+                        <%= render "devise/shared/links" %>
+			<% end %>  
+</div>
+
+<a href="/"><h1>Cybernetic</h1></a>
+
+

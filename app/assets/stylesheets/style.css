@@ -1,20 +1,51 @@
 
 
 body {
-	font-family: "futura-pt",sans-serif;
+	font-family: "futura-pt", "futura", sans-serif;
 	font-style: normal;
 	font-weight: 400;
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: "orbitron", sans-serif;
+	font-family: "orbitron", Impact, Charcoal, sans-serif;
 	font-weight: 300;
 	font-style: normal;
 }
 
+tr:nth-of-type(odd) {
+  background-color:#ddd;
+} 
+td {
+ padding: 5px;
+ }
 
-
-#content {
-	margin: 0 auto;
-	width: 960px;
+@media (min-width: 960px) {
+  
+	#content {
+	  margin: 0 auto;
+	  width: 960px;
+          } 
 }
+
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+#devise {
+	margin: 0 auto;
+	width: 300px;
+	padding: 2px 33px;
+	border:1px solid grey;
+	border-radius: 5px;
+}
+
+#new_user {
+	margin: 0 auto;
+	width: 234px;
+}
+	

@@ -8,10 +8,13 @@
   <strong>Description:</strong>
   <%= @snippet.technology %>
 </p>
-<p>
+
   <strong>Code:</strong>
-  <%= @snippet.code %>
-</p>
+  <code>
+  	<%= @snippet.code %>
+  </code>
+
+<hr>
 
 <%= link_to 'Edit', edit_snippet_path(@snippet) %> |
 <%= link_to 'Back', snippets_path %>

@@ -1,0 +1,26 @@
+<h1>Listing devlogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devlogs.each do |devlog| %>
+      <tr>
+        <td><%= devlog.message %></td>
+        <td><%= devlog.project %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Devlog', new_project_devlog_path %>
