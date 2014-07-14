@@ -1,18 +1,11 @@
 Cybernetic::Application.routes.draw do
   
-  root 'projects#index'
+  root 'snippets#index'
   
   devise_for :users
-
-  resources :projects do 
-    resources :tasks
-    resources :use_cases
-    resources :devlogs
-  end
   
   resources :snippets
 
-  resources :contacts
   resources :recipes
 
    #temporarily disable registration until site is ready. 

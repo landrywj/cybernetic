@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   
   def after_sign_in_path_for(resource)
-    projects_path
+    snippets_path
   end
   
   
