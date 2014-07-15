@@ -21,14 +21,6 @@ td {
  }
 
 
-@media (min-width: 970px) {
-  
-	#content {
-	  margin: 0 auto;
-	  width: 960px;
-          } 
-}
-
 
 
 .pull-right {
@@ -51,4 +43,8 @@ td {
 	margin: 0 auto;
 	width: 234px;
 }
-	
+
+.center_div {
+	width: 220px;
+	margin: 0 auto;
+}
