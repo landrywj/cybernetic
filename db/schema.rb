@@ -16,6 +16,65 @@ ActiveRecord::Schema.define(version: 20140321155814) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contacts", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "display_name"
+    t.string   "nickame"
+    t.string   "primary_email"
+    t.string   "secondary_email"
+    t.string   "screen_name"
+    t.string   "work_phone"
+    t.string   "home_phone"
+    t.string   "fax_number"
+    t.string   "mobile_number"
+    t.string   "home_address"
+    t.string   "home_address2"
+    t.string   "home_city"
+    t.string   "home_state"
+    t.string   "home_zip_code"
+    t.string   "home_country"
+    t.string   "work_address"
+    t.string   "work_address_2"
+    t.string   "work_city"
+    t.string   "work_state"
+    t.string   "work_zip_code"
+    t.string   "work_country"
+    t.string   "job_title"
+    t.string   "department"
+    t.string   "organization"
+    t.string   "web_page_1"
+    t.string   "web_page_2"
+    t.string   "birth_year"
+    t.string   "birth_month"
+    t.string   "birth_day"
+    t.string   "custom_1"
+    t.string   "custom_2"
+    t.string   "custom_3"
+    t.string   "custom_4"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contacts", ["display_name"], name: "index_contacts_on_display_name", using: :btree
+
+  create_table "devlogs", force: true do |t|
+    t.text     "message"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "devlogs", ["project_id"], name: "index_devlogs_on_project_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "recipes", force: true do |t|
     t.string   "technology"
     t.string   "name"
@@ -34,6 +93,28 @@ ActiveRecord::Schema.define(version: 20140321155814) do
     t.text     "description"
   end
 
+  create_table "tasks", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "duration"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
+
+  create_table "use_cases", force: true do |t|
+    t.string   "user"
+    t.text     "story"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "use_cases", ["project_id"], name: "index_use_cases_on_project_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
