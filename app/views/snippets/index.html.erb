@@ -19,6 +19,7 @@
         <td><%= snippet.technology %></td>
 		<td><%= simple_format(snippet.description) %></td>
         <td><code><%= snippet.code %></code></td>
+        <td><%= raw snippet.highlighted_code %></td>
         <td><%= link_to 'Show', snippet %></td>
         <td><%= link_to 'Edit', edit_snippet_path(snippet) %></td>
         <td><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

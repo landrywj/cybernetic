@@ -3,6 +3,7 @@
 <p>
   <strong>Technology:</strong>
   <%= @snippet.technology %>
+  <%= @snippet.language %>
 </p>
 <p>
   <strong>Description:</strong>
@@ -13,6 +14,14 @@
   <code>
   	<%= @snippet.code %>
   </code>
+
+  <div class="code_block">
+  <% if @snippet.highlighted_code.present? %>
+    <%= raw @snippet.highlighted_code %>
+  <% else %>
+    <pre><%= @snippet.plain_code %></pre>
+  <% end %>
+</div>
 
 <hr>
 

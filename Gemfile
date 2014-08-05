@@ -10,6 +10,11 @@ gem 'coffee-rails', '~> 4.0.1'
 # gem 'therubyracer', platforms: :ruby
 
 
+#Background jobs
+gem 'sidekiq'
+gem 'sinatra'
+gem 'slim'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0.6'

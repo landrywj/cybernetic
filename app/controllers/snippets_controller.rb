@@ -18,15 +18,12 @@ class SnippetsController < ApplicationController
 
   def create
     @snippet = Snippet.new(snippet_params)
-
-    respond_to do |format|
-      if @snippet.save
-        format.html { redirect_to '/snippets', notice: 'Snippet was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @snippet }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @snippet.errors, status: :unprocessable_entity }
-      end
+    if @snippet.save
+      # PygmentsWorker.perform_in(1.hour, @snippet.id)
+      PygmentsWorker.perform_async(@snippet.id)
+      redirect_to @snippet
+    else
+      render :new
     end
   end
 
@@ -60,6 +57,6 @@ class SnippetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def snippet_params
-      params.require(:snippet).permit(:technology, :code, :description)
+      params.require(:snippet).permit(:technology, :code, :description, :plain_code, :highlighted_code, :language)
     end
 end
