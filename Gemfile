@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.6'
 gem 'pg'
 gem 'devise'
-gem 'uglifier', '>= 2.5.0'
-gem 'coffee-rails', '~> 4.0.1'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -29,9 +29,8 @@ end
 
 # Use Capistrano for deployment
 group :development do
- gem 'capistrano', '~> 2.15'
- gem 'rvm-capistrano'
- gem 'rack-mini-profiler'
+ gem 'capistrano-rails'
+ gem 'spring'
 end
 
 # Use debugger
