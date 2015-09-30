@@ -30,8 +30,9 @@ gem "passenger"
 
 # Use Capistrano for deployment
 group :development do
- gem 'capistrano-rails'
- gem 'spring'
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'spring'
 end
 
 # Use debugger
