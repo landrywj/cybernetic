@@ -1,31 +1,32 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.4'
+
 gem 'pg'
 gem 'devise'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier'
+#gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 
 #Background jobs
-gem 'sidekiq'
-gem 'sinatra'
-gem 'slim'
+#gem 'sidekiq'
+#gem 'sinatra'
+#gem 'slim'
 
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0.6'
+gem 'jbuilder'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-# Use unicorn as the app server
- gem 'unicorn'
+# Use Phusion Passenger as the app server
+gem "passenger"
 
 # Use Capistrano for deployment
 group :development do

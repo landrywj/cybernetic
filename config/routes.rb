@@ -1,4 +1,4 @@
-require 'sidekiq/web'
+#require 'sidekiq/web'
 
 Cybernetic::Application.routes.draw do
   
@@ -9,8 +9,8 @@ Cybernetic::Application.routes.draw do
   resources :snippets
 
   resources :recipes
-
-  mount Sidekiq::Web, at: '/sidekiq'
+#
+#  mount Sidekiq::Web, at: '/sidekiq'
 
    
 end

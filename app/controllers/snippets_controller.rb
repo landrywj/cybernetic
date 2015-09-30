@@ -19,9 +19,9 @@ class SnippetsController < ApplicationController
   def create
     @snippet = Snippet.new(snippet_params)
     if @snippet.save
-      # PygmentsWorker.perform_in(1.hour, @snippet.id)
-      PygmentsWorker.perform_async(@snippet.id)
-      redirect_to @snippet
+    request = Net::HTTP.post_form(URI.parse("http://pygments.appspot.com/"), {lang: @snippet.language, code: @snippet.plain_code})
+    @snippet.update_attribute(:highlighted_code, request.body)
+    redirect_to @snippet
     else
       render :new
     end
