@@ -35,6 +35,12 @@ set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
 
 namespace :deploy do
+    
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -44,5 +50,11 @@ namespace :deploy do
       # end
     end
   end
-
+    
+    desc "Create, migrate and seed the database"
+    task :database_setup do 
+        on roles(:db) do |host|
+            execute ('rake db:setup')
+        end
+    end
 end
