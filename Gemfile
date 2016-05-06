@@ -9,13 +9,6 @@ gem 'uglifier'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
-
-#Background jobs
-#gem 'sidekiq'
-#gem 'sinatra'
-#gem 'slim'
-
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
